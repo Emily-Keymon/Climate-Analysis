@@ -1,4 +1,3 @@
-################################################
 # Step 2 - Climate App
 
 import datetime as dt
