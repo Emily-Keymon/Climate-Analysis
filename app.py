@@ -50,8 +50,8 @@ def welcome():
         f"/api/v1.0/precipitation<br/>"
         f"/api/v1.0/stations<br/>"
         f"/api/v1.0/tobs<br/>"
-        f"/api/v1.0/temp/start/end"
-    )
+        f"/api/v1.0/temp/start/end")
+
 
 ##################################################
 # Precipitation route
@@ -129,8 +129,3 @@ def stats(start=None, end=None):
 
 if __name__ == '__main__':
     app.run()
-
-##################################################
-
-    #app.run(debug=True)
-
