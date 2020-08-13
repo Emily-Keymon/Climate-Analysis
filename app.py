@@ -1,4 +1,5 @@
 # Step 2 - Climate App
+# Design a Flask API based on the queries
 
 # Import dependencies
 import datetime as dt
@@ -32,9 +33,10 @@ session = Session(engine)
 # Flask Setup
 app = Flask(__name__)
 
+
 # Flask Routes
 
-
+# Welcome route
 @app.route("/")
 def welcome():
     return (
@@ -47,6 +49,7 @@ def welcome():
     )
 
 
+# Precipitation route
 @app.route("/api/v1.0/precipitation")
 def precipitation():
     """Return the precipitation data for the last year"""
@@ -54,7 +57,7 @@ def precipitation():
     prev_year = dt.date(2017, 8, 23) - dt.timedelta(days=365)
 
     # Query for the date and precipitation for the last year
-    precipitation = session.query(Measurement.date, Measurement.prcp).\
+    precipitation = session.query(Measurement.date, Measurement.prcp). \
         filter(Measurement.date >= prev_year).all()
 
     # Dict with date as the key and prcp as the value
@@ -62,6 +65,7 @@ def precipitation():
     return jsonify(precip)
 
 
+# Stations route
 @app.route("/api/v1.0/stations")
 def stations():
     """Return a list of stations."""
@@ -72,6 +76,7 @@ def stations():
     return jsonify(stations=stations)
 
 
+# TOBS route
 @app.route("/api/v1.0/tobs")
 def temp_monthly():
     """Return the temperature observations (tobs) for previous year."""
@@ -79,8 +84,8 @@ def temp_monthly():
     prev_year = dt.date(2017, 8, 23) - dt.timedelta(days=365)
 
     # Query the primary station for all tobs from the last year
-    results = session.query(Measurement.tobs).\
-        filter(Measurement.station == 'USC00519281').\
+    results = session.query(Measurement.tobs). \
+        filter(Measurement.station == 'USC00519281'). \
         filter(Measurement.date >= prev_year).all()
 
     # Unravel results into a 1D array and convert to a list
@@ -100,15 +105,15 @@ def stats(start=None, end=None):
 
     if not end:
         # calculate TMIN, TAVG, TMAX for dates greater than start
-        results = session.query(*sel).\
+        results = session.query(*sel). \
             filter(Measurement.date >= start).all()
         # Unravel results into a 1D array and convert to a list
         temps = list(np.ravel(results))
         return jsonify(temps)
 
     # calculate TMIN, TAVG, TMAX with start and stop
-    results = session.query(*sel).\
-        filter(Measurement.date >= start).\
+    results = session.query(*sel). \
+        filter(Measurement.date >= start). \
         filter(Measurement.date <= end).all()
     # Unravel results into a 1D array and convert to a list
     temps = list(np.ravel(results))
@@ -117,3 +122,5 @@ def stats(start=None, end=None):
 
 if __name__ == '__main__':
     app.run()
+
+    #app.run(debug=True)
