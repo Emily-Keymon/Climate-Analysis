@@ -104,7 +104,7 @@ def temp_monthly():
 # Temp start end route
 @app.route("/api/v1.0/temp/<start>")
 @app.route("/api/v1.0/temp/<start>/<end>")
-def stats(start="2017, 06, 23", end="2017, 06, 30"):
+def stats(start="2017, 06, 23", end="2017, 06, 27"):
     """Return TMIN, TAVG, TMAX."""
 
     # Select statement
@@ -117,7 +117,7 @@ def stats(start="2017, 06, 23", end="2017, 06, 30"):
         # Unravel results into a 1D array and convert to a list
         temps = list(np.ravel(results))
         return jsonify(temps)
-
+    
     # calculate TMIN, TAVG, TMAX with start and stop
     results = session.query(*sel).\
         filter(Measurement.date >= start).\
