@@ -18,7 +18,8 @@ from flask import Flask, jsonify
 ##################################################
 # Database Setup
 # Create engine
-engine = create_engine("sqlite:///hawaii.sqlite")
+#engine = create_engine("sqlite:///hawaii.sqlite")
+engine = create_engine("sqlite:///hawaii.sqlite", connect_args={'check_same_thread': False})
 
 # Reflect an existing database into a new model
 Base = automap_base()
@@ -59,14 +60,14 @@ def welcome():
 def precipitation():
     """Return the precipitation data for the last year"""
     # Calculate the date 1 year ago from last date in database
-    prev_year = dt.date(2017, 8, 23) - dt.timedelta(days=365)
+    previous_year = dt.date(2017, 8, 23) - dt.timedelta(days=365)
 
     # Query for the date and precipitation for the last year
-    precipitation = session.query(Measurement.date, Measurement.prcp).\
-        filter(Measurement.date >= prev_year).all()
+    precip = session.query(Measurement.date, Measurement.prcp).\
+        filter(Measurement.date >= previous_year).all()
 
     # Dict with date as the key and prcp as the value
-    precip = {date: prcp for date, prcp in precipitation}
+    precip = {date: prcp for date, prcp in precip}
     return jsonify(precip)
 
 ##################################################
@@ -74,25 +75,24 @@ def precipitation():
 @app.route("/api/v1.0/stations")
 def stations():
     """Return a list of stations."""
-    results = session.query(Station.station).all()
+    locations = session.query(Station.station).all()
 
     # Unravel results into a 1D array and convert to a list
-    stations = list(np.ravel(results))
+    stations = list(np.ravel(locations))
     return jsonify(stations=stations)
 
 ##################################################
 # TOBS route
 @app.route("/api/v1.0/tobs")
-@app.route("/api/v1.0/tobs")
 def temp_monthly():
     """Return the temperature observations (tobs) for previous year."""
     # Calculate the date 1 year ago from last date in database
-    prev_year = dt.date(2017, 8, 23) - dt.timedelta(days=365)
+    previous_year = dt.date(2017, 8, 23) - dt.timedelta(days=365)
 
     # Query the primary station for all tobs from the last year
     results = session.query(Measurement.tobs).\
         filter(Measurement.station == 'USC00519281').\
-        filter(Measurement.date >= prev_year).all()
+        filter(Measurement.date >= previous_year).all()
 
     # Unravel results into a 1D array and convert to a list
     temps = list(np.ravel(results))
@@ -104,7 +104,7 @@ def temp_monthly():
 # Temp start end route
 @app.route("/api/v1.0/temp/<start>")
 @app.route("/api/v1.0/temp/<start>/<end>")
-def stats(start=None, end=None):
+def stats(start="2017, 06, 23", end="2017, 06, 30"):
     """Return TMIN, TAVG, TMAX."""
 
     # Select statement
