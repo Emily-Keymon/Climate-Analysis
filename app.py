@@ -47,34 +47,43 @@ app = Flask(__name__)
 def welcome():
     return (
         f"Welcome to the Hawaii Climate Analysis API!<br/>"
-        f"Available Routes:<br/>"
+        f"<br>"
+        f"Available routes are as follows:<br/>"
+        f"<br>"    
         f"/api/v1.0/precipitation<br/>"
+        f" The precipitation route returns precipitation from 8/23/16 to 8/23/17<br/>"
+        f"<br>"
         f"/api/v1.0/stations<br/>"
+        f" The stations route returns a list of station numbers that collected the measurements<br/>"
+        f"<br>"
         f"/api/v1.0/tobs<br/>"
-        f"/api/v1.0/temp/start/end")
+        f" The tobs route uses the station with the  highest number of observations to return the temperature observations (tobs) for previous year<br/>"
+        f"<br>"
+        f"/api/v1.0/yyyy-mm-dd/yyyy-mm-dd<br/>"
+        f" The temp/start/end route returns the minimum temperature, the average temperature, and the max temperature for a given start-end date range<br/>"
+        f"Enter trip start and end dates in yyyy-mm-dd format for results")
 
+        
 
 ##################################################
 # Precipitation route
 @app.route("/api/v1.0/precipitation")
 def precipitation():
-    """Return the precipitation data for the last year"""
-    # Calculate the date 1 year ago from last date in database
+    # Calculate the date one year from the last date in database (2017-08-23)
     previous_year = dt.date(2017, 8, 23) - dt.timedelta(days=365)
 
-    # Query for the date and precipitation for the last year
-    precip = session.query(Measurement.date, Measurement.prcp).\
-        filter(Measurement.date >= previous_year).all()
+    # Perform a query to retrieve the data and precipitation results
+    results = session.query(Measurement.date, Measurement.prcp).filter(Measurement.date >= previous_year).all()
 
     # Dict with date as the key and prcp as the value
-    precip = {date: prcp for date, prcp in precip}
+    precip = {date: prcp for date, prcp in results}
     return jsonify(precip)
 
 ##################################################
 # Stations route
 @app.route("/api/v1.0/stations")
 def stations():
-    """Return a list of stations."""
+    # Design a query to calculate the total number of stations
     locations = session.query(Station.station).all()
 
     # Unravel results into a 1D array and convert to a list
@@ -85,8 +94,8 @@ def stations():
 # TOBS route
 @app.route("/api/v1.0/tobs")
 def temp_monthly():
-    """Return the temperature observations (tobs) for previous year."""
-    # Calculate the date 1 year ago from last date in database
+    # Design a query to retrieve the last 12 months of temperature observations (tobs) using USC00519281
+    # Calculate the date one year from the last date in database (2017-08-23)
     previous_year = dt.date(2017, 8, 23) - dt.timedelta(days=365)
 
     # Query the primary station for all tobs from the last year
@@ -101,31 +110,17 @@ def temp_monthly():
     return jsonify(temps=temps)
 
 ##################################################
-# Temp start end route
-@app.route("/api/v1.0/temp/<start>")
-@app.route("/api/v1.0/temp/<start>/<end>")
-def stats(start="2017, 06, 23", end="2017, 06, 27"):
-    """Return TMIN, TAVG, TMAX."""
-
-    # Select statement
-    sel = [func.min(Measurement.tobs), func.avg(Measurement.tobs), func.max(Measurement.tobs)]
-
-    if not end:
-        # calculate TMIN, TAVG, TMAX for dates greater than start
-        results = session.query(*sel).\
-            filter(Measurement.date >= start).all()
-        # Unravel results into a 1D array and convert to a list
-        temps = list(np.ravel(results))
-        return jsonify(temps)
-
-    # calculate TMIN, TAVG, TMAX with start and stop
-    results = session.query(*sel).\
-        filter(Measurement.date >= start).\
-        filter(Measurement.date <= end).all()
-    # Unravel results into a 1D array and convert to a list
-    temps = list(np.ravel(results))
-    return jsonify(temps=temps)
+# Temp start/end date route
+@app.route("/api/v1.0/<start_date>/<end_date>")
+def temp_range(start_date, end_date):
+    # query
+    temps = session.query(func.min(Measurement.tobs), func.max(Measurement.tobs), func.avg(Measurement.tobs)).\
+        filter(Measurement.date >= start_date, Measurement.date <= end_date).first()
+    # create dictionary from result
+    temps_dictionary2 = {"Minimum temp": temps[0], "Maximum temp": temps[1], "Average temp": temps[2]}
+    return jsonify(temps_dictionary2)
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    #app.run(debug=True)
+    app.run()
