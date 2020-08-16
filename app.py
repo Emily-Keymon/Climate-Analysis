@@ -14,7 +14,6 @@ from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 from flask import Flask, jsonify
 
-
 ##################################################
 # Database Setup
 # Create engine
@@ -37,6 +36,7 @@ session = Session(engine)
 # Flask Setup
 app = Flask(__name__)
 
+
 ##################################################
 # Routes
 
@@ -48,7 +48,7 @@ def home_page():
         f"Welcome to the Hawaii Climate Analysis API!<br/>"
         f"<br>"
         f"Available routes are as follows:<br/>"
-        f"<br>"    
+        f"<br>"
         f"/api/v1.0/precipitation<br/>"
         f" The precipitation route returns precipitation from 8/23/16 to 8/23/17<br/>"
         f"<br>"
@@ -56,14 +56,15 @@ def home_page():
         f" The stations route returns a list of station numbers that collected the measurements<br/>"
         f"<br>"
         f"/api/v1.0/tobs<br/>"
-        f" The tobs route uses the station with the  highest number of observations to return the temperature observations (tobs) for previous year<br/>"
+        f" The tobs route uses the station with the  highest number of observations to return the temperature "
+        f"observations (tobs) for previous year<br/>"
         f"<br>"
         f"/api/v1.0/temp/start/end"
         f"<br>"
-        f" The temp start date end date route returns the minimum temperature, the average temperature, and the max temperature for a given start-end date range<br/>"
+        f" The temp start date end date route returns the minimum temperature, the average temperature, and the max "
+        f"temperature for a given start-end date range<br/>"
         f"Enter trip start and end dates in yyyy-mm-dd format for results")
 
-        
 
 ##################################################
 # Precipitation route
@@ -80,6 +81,7 @@ def precipitation():
     precip = {date: prcp for date, prcp in results}
     return jsonify(precip)
 
+
 ##################################################
 # Stations route
 @app.route("/api/v1.0/stations")
@@ -91,6 +93,7 @@ def stations():
     stations = list(np.ravel(locations))
     return jsonify(stations=stations)
 
+
 ##################################################
 # TOBS route
 @app.route("/api/v1.0/tobs")
@@ -100,8 +103,8 @@ def temp_monthly():
 
     # Query the dates and temperature observations (tobs) of the most active station for the least year of data
     # Most active station is USC00519281
-    results = session.query(Measurement.tobs).\
-        filter(Measurement.station == 'USC00519281').\
+    results = session.query(Measurement.tobs). \
+        filter(Measurement.station == 'USC00519281'). \
         filter(Measurement.date >= previous_year).all()
 
     # Unravel results into a 1D array and convert to a list
@@ -110,12 +113,12 @@ def temp_monthly():
     # Return a JSON list of temperature observations (tobs) for the previous year
     return jsonify(temps=temps)
 
+
 ##################################################
 # Temp start/end date route
 @app.route("/api/v1.0/temp/<start>")
 @app.route("/api/v1.0/temp/<start>/<end>")
 def temp_range(start, end):
-
     # Select statement
     sel = [func.min(Measurement.tobs), func.avg(Measurement.tobs), func.max(Measurement.tobs)]
 
@@ -143,5 +146,5 @@ def temp_range(start, end):
 
 
 if __name__ == '__main__':
-    #app.run(debug=True)
+    # app.run(debug=True)
     app.run()
