@@ -44,6 +44,7 @@ app = Flask(__name__)
 # Home page, list all routes available
 @app.route("/")
 def home_page():
+    print("API request started")
     return (
         f"Welcome to the Hawaii Climate Analysis API!<br/>"
         f"<br>"
@@ -70,6 +71,7 @@ def home_page():
 # Precipitation route
 @app.route("/api/v1.0/precipitation")
 def precipitation():
+    print("API request for precipitation")
     # Calculate the date one year from the last date in database (2017-08-23)
     previous_year = dt.date(2017, 8, 23) - dt.timedelta(days=365)
 
@@ -86,6 +88,7 @@ def precipitation():
 # Stations route
 @app.route("/api/v1.0/stations")
 def stations():
+    print("API request for stations")
     # Design a query to calculate the total number of stations
     locations = session.query(Station.station).all()
 
@@ -97,7 +100,8 @@ def stations():
 ##################################################
 # TOBS route
 @app.route("/api/v1.0/tobs")
-def temp_monthly():
+def temp():
+    print("API request for temperature observations")
     # Calculate the date one year from the last date in database (2017-08-23)
     previous_year = dt.date(2017, 8, 23) - dt.timedelta(days=365)
 
@@ -119,6 +123,7 @@ def temp_monthly():
 @app.route("/api/v1.0/temp/<start>")
 @app.route("/api/v1.0/temp/<start>/<end>")
 def temp_range(start, end):
+    print("API request for start/end date range")
     # Select statement
     sel = [func.min(Measurement.tobs), func.avg(Measurement.tobs), func.max(Measurement.tobs)]
 
