@@ -117,8 +117,8 @@ def temp_range(start_date, end_date):
     temps = session.query(func.min(Measurement.tobs), func.max(Measurement.tobs), func.avg(Measurement.tobs)).\
         filter(Measurement.date >= start_date, Measurement.date <= end_date).first()
     # create dictionary from result
-    temps_dictionary2 = {"Minimum temp": temps[0], "Maximum temp": temps[1], "Average temp": temps[2]}
-    return jsonify(temps_dictionary2)
+    temps_dictionary = {"Minimum temp": temps[0], "Maximum temp": temps[1], "Average temp": temps[2]}
+    return jsonify(temps_dictionary)
 
 
 if __name__ == '__main__':
