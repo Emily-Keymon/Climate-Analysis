@@ -44,8 +44,7 @@ app = Flask(__name__)
 # Home page, list all routes available
 @app.route("/")
 def home_page():
-    print("API request started")
-    return (
+        return (
         f"Welcome to the Hawaii Climate Analysis API!<br/>"
         f"<br>"
         f"Available routes are as follows:<br/>"
