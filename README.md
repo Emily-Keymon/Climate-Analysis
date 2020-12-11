@@ -6,16 +6,18 @@ The goal of this project was to use Python and SQLAlchemy to do basic climate an
 ## Tasks
 ### Climate analysis
 1.  Connected to sqlite database using SQLAlchemy create_engine.
-2.  Used SQLAlchemy automap_base() to reflect your tables into classes and save a reference to those classes called Station and Measurement.
+2.  Used SQLAlchemy automap_base() to reflect tables into classes and saved a reference to those classes called Station and Measurement.
 ### Precipitation analysis
 1.  Designed a query to retrieve the last 12 months of precipitation data.
-2.  Query precipitation data for dates within that range and sort records from oldest to newest.
-3.  Plot the precipitation data for that date range.
-4.  Calculate the summary statistics for the precipitation data.
-5.  Use Pandas to print the summary statistics for the precipitation data.
+2.  Queried the date and prcp values.
+3.  Loaded the query results into a Pandas DataFrame and set the index to the date column.  
+4.  Sorted dataframe values by date.
+5.  Plotted results using the .plot method.
+6.  Use Pandas to print the summary statistics for the precipitation data.
 ### Station Analysis
 1.  Designed a query to calculate the total number of stations.
 2.  Designed a query to find the most active stations.
+3.  Listed stations and observation counts in descending order.
 3.  Determined which station had the highest number of observations.
 ### Temperature Analysis
 1.  Designed a query to retrieve the last 12 months of temperature observation data (TOBS).
