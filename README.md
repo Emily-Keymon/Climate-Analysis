@@ -57,27 +57,36 @@ The goal of this project was to use Python and SQLAlchemy to do basic climate an
       * Returned a JSON list of the minimum temperature, the average temperature, and the max temperature for a given start or start-end range.
       * When given the start only, calculated `TMIN`, `TAVG`, and `TMAX` for all dates greater than and equal to the start date.
       * When given the start and the end date, calculate the `TMIN`, `TAVG`, and `TMAX` for dates between the start and end date inclusive.
----
+-----
 # Results
----
-## Precipitation analysis
 ----
+## Precipitation analysis
 #### Precipitation in inches over the last twelve months of data:
 ![Precipitation info](https://user-images.githubusercontent.com/64673015/101854098-7012ac00-3b26-11eb-9e37-95a95c259b9b.PNG)
 ![Precipitation in inches over time](https://user-images.githubusercontent.com/64673015/101853369-19f13900-3b25-11eb-90b5-042e494672ef.png)
+
+----
 ## Station analysis
 #### Total number of stations:
 ![Stations](https://user-images.githubusercontent.com/64673015/101854656-908f3600-3b27-11eb-8a78-2622333bb6f9.PNG)
 #### The most active station is USC00519281.
+
+----
 ## Temperature analysis
 #### Temperature of most active station over the last twelve months of data:
 ![Frequency of temperature observations](https://user-images.githubusercontent.com/64673015/101853504-4d33c800-3b25-11eb-8485-ea5d04b40463.png)
+
+----
 ## Additional temperature analysis
 #### In June and December, the mean temperatures only differed by 3.9 degrees. The t-test p-value result was 3.9025129038616655e-191. This low p-value indicates there is no statistical significant difference.
 ![ttest](https://user-images.githubusercontent.com/64673015/101855678-7191a380-3b29-11eb-8ee7-8bc0ad45758c.PNG)
+
+----
 ## Daily average rainfall analysis
 #### Daily normals area plot:
 ![Daily normals area plot](https://user-images.githubusercontent.com/64673015/101853813-e2cf5780-3b25-11eb-8910-78026e229ccf.png)
+
+----
 ## Trip analysis
 #### Daily normals:
 ![Normals](https://user-images.githubusercontent.com/64673015/101856516-1660b080-3b2b-11eb-9b1a-69ed227b7ec5.PNG)
