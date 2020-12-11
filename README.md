@@ -1,39 +1,26 @@
 # Climate Analysis
 
 The goal of this project was to use Python and SQLAlchemy to do basic climate analysis and data exploration of a dataset. The data was contained in a SQLite database.  All of analysis was completed using SQLAlchemy ORM queries, Pandas, and Matplotlib.
-
 ## Tools Used
 * Python - Pandas, Numpy, Matplotlib, SQLAlchemy
-
 ## Tasks
 ### Climate analysis
 1.  Define the SQLAlchemy environment and establish a connection to the SQLite database.
-2. Automap the database, reflect the tables as classes, and create a session.
+2.  Automap the database, reflect the tables as classes, and create a session.
 ### Precipitation analysis
 1.  Designed a query to retrieve the last 12 months of precipitation data.
 2.  Query precipitation data for dates within that range and sort records from oldest to newest.
 3.  Plot the precipitation data for that date range.
 4.  Calculate the summary statistics for the precipitation data.
 5.  Use Pandas to print the summary statistics for the precipitation data.
-
-
 ### Station Analysis
-
-* Design a query to calculate the total number of stations.
-
-* Design a query to find the most active stations.
-
-  * List the stations and observation counts in descending order.
-
-  * Which station has the highest number of observations?
-
-  * Hint: You will need to use a function such as `func.min`, `func.max`, `func.avg`, and `func.count` in your queries.
-
-* Design a query to retrieve the last 12 months of temperature observation data (TOBS).
-
-  * Filter by the station with the highest number of observations.
-
-  * Plot the results as a histogram with `bins=12`.
+1.  Designed a query to calculate the total number of stations.
+2.  Designed a query to find the most active stations.
+3.  Determined which station had the highest number of observations.
+### Temperature Analysis
+1.  Designed a query to retrieve the last 12 months of temperature observation data (TOBS).
+2.  Filtered by the station with the highest number of observations.
+3.  Plotted the results as a histogram with `bins=12`.
 
 ## Step 2 - Climate App
 
