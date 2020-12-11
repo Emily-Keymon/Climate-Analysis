@@ -5,8 +5,8 @@ The goal of this project was to use Python and SQLAlchemy to do basic climate an
 * Python - Pandas, Numpy, Matplotlib, SQLAlchemy
 ## Tasks
 ### Climate analysis
-1.  Define the SQLAlchemy environment and establish a connection to the SQLite database.
-2.  Automap the database, reflect the tables as classes, and create a session.
+1.  Connected to sqlite database using SQLAlchemy create_engine.
+2.  Used SQLAlchemy automap_base() to reflect your tables into classes and save a reference to those classes called Station and Measurement.
 ### Precipitation analysis
 1.  Designed a query to retrieve the last 12 months of precipitation data.
 2.  Query precipitation data for dates within that range and sort records from oldest to newest.
