@@ -43,8 +43,8 @@ The goal of this project was to use Python and SQLAlchemy to do basic climate an
 2.  Used Flask to create routes.
 ### Routes
 1.  `/` 
-  * Home page
-  * List of all routes available.
+   Home page
+   List of all routes available.
 2.  `/api/v1.0/precipitation`
   * Converted query results to a dictionary using `date` as the key and `prcp` as the value.
   * Returned JSON representation of your dictionary.
