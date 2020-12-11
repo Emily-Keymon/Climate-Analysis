@@ -63,7 +63,7 @@ The goal of this project was to use Python and SQLAlchemy to do basic climate an
 ### Trip average temperature
 ![Trip avg temp](https://user-images.githubusercontent.com/64673015/101853582-72283b00-3b25-11eb-843f-d5da6c57621e.png)
 ### Daily normals area plot
-![Daily normals area plot](https://user-images.githubusercontent.com/64673015/101853736-b9163080-3b25-11eb-88d1-41e5703ded2d.png
+![Daily normals area plot](https://user-images.githubusercontent.com/64673015/101853813-e2cf5780-3b25-11eb-8910-78026e229ccf.png)
 
 
 
