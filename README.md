@@ -1,7 +1,7 @@
 # Climate Analysis
 The goal of this project was to use Python and SQLAlchemy to do basic climate analysis and data exploration of a dataset. The data was contained in a SQLite database.  All of analysis was completed using SQLAlchemy ORM queries, Pandas, and Matplotlib.
 ## Tools Used
-* Python - Pandas, Numpy, Matplotlib, SQLAlchemy, Datetime, Flask
+* Python - Pandas, Numpy, Matplotlib, SQLAlchemy, Datetime, Flask, Scipy
 ## Tasks
 ### Reflect sqlite tables into SQLAlchemy
 1.  Connected to sqlite database using SQLAlchemy create_engine.
@@ -23,6 +23,11 @@ The goal of this project was to use Python and SQLAlchemy to do basic climate an
 1.  Designed a query to retrieve the last 12 months of temperature observation data (TOBS).
 2.  Filtered by the station with the highest number of observations, then loaded data into datafram
 3.  Plotted results as a histogram with `bins=12`.
+### Additional temperature analysis
+1.  Queried all June and December temperature observations.
+2.  Created separate Pandas dataframes from each dataset.
+3.  Performed an independent t-test on June and December datasets.
+4.  Analyzed t-statistic and p-value.
 ### Climate app with multiple routes
 1.  Designed a Flask API based on the queries developed.
 2.  Used Flask to create routes.
@@ -44,7 +49,7 @@ The goal of this project was to use Python and SQLAlchemy to do basic climate an
   * When given the start and the end date, calculate the `TMIN`, `TAVG`, and `TMAX` for dates between the start and end date inclusive.
 
 
-### Temperature Analysis I
+### Additional Temperature Analysis
 
 * Hawaii is reputed to enjoy mild weather all year. Is there a meaningful difference between the temperature in, for example, June and December?
 
@@ -54,8 +59,7 @@ The goal of this project was to use Python and SQLAlchemy to do basic climate an
 
 * Use the t-test to determine whether the difference in the means, if any, is statistically significant. Will you use a paired t-test, or an unpaired t-test? Why?
 
-### Temperature Analysis II
-
+### Additional temperature analysis
 * The starter notebook contains a function called `calc_temps` that will accept a start date and end date in the format `%Y-%m-%d`. The function will return the minimum, average, and maximum temperatures for that range of dates.
 
 * Use the `calc_temps` function to calculate the min, avg, and max temperatures for your trip using the matching dates from the previous year (i.e., use "2017-01-01" if your trip start date was "2018-01-01").
@@ -66,7 +70,7 @@ The goal of this project was to use Python and SQLAlchemy to do basic climate an
 
   * Use the peak-to-peak (TMAX-TMIN) value as the y error bar (YERR).
 
-### Daily Rainfall Average
+### Daily rainfall average
 
 * Calculate the rainfall per weather station using the previous year's matching dates.
 
