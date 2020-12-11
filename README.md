@@ -69,9 +69,11 @@ The goal of this project was to use Python and SQLAlchemy to do basic climate an
 ### Additional temperature analysis
 #### In June and December, the mean temperatures only differed by 3.9 degrees. The t-test p-value result was 3.9025129038616655e-191. This low p-value indicates there is no statistical significant difference.
 ![ttest](https://user-images.githubusercontent.com/64673015/101855678-7191a380-3b29-11eb-8ee7-8bc0ad45758c.PNG)
-
-### Daily normals area plot
+### Daily average rainfall analysis
 ![Daily normals area plot](https://user-images.githubusercontent.com/64673015/101853813-e2cf5780-3b25-11eb-8910-78026e229ccf.png)
+
+### Trip average temperature
+![Trip avg temp](https://user-images.githubusercontent.com/64673015/101855986-101e0480-3b2a-11eb-8df9-32aaa05eef88.png)
 
 
 
