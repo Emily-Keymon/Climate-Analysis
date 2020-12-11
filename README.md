@@ -35,6 +35,9 @@ The goal of this project was to use Python and SQLAlchemy to do basic climate an
 4.  Use daily_normals function to calculate the normals for each date string and append results to a list.
 5.  Loaded list of daily normals into a dataframe and set index to the date.
 6.  Plotted daily normals as an area plot.
+### Trip analysis 
+1.  Picked dates from dataset for trip to Hawaii (6/23/17 - 6/30/17).
+2.  Calculated daily normals for trip date range.
 ### Climate app with multiple routes
 1.  Designed a Flask API based on the queries developed.
 2.  Used Flask to create routes.
@@ -71,8 +74,7 @@ The goal of this project was to use Python and SQLAlchemy to do basic climate an
 ![ttest](https://user-images.githubusercontent.com/64673015/101855678-7191a380-3b29-11eb-8ee7-8bc0ad45758c.PNG)
 ### Daily average rainfall analysis
 ![Daily normals area plot](https://user-images.githubusercontent.com/64673015/101853813-e2cf5780-3b25-11eb-8910-78026e229ccf.png)
-
-### Trip average temperature
+### Trip analysis
 ![Trip avg temp](https://user-images.githubusercontent.com/64673015/101855986-101e0480-3b2a-11eb-8df9-32aaa05eef88.png)
 
 
