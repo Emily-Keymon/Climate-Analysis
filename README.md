@@ -56,6 +56,9 @@ The goal of this project was to use Python and SQLAlchemy to do basic climate an
   * When given the start and the end date, calculate the `TMIN`, `TAVG`, and `TMAX` for dates between the start and end date inclusive.
 ## Results
 * In June and December, the mean temperatures only differed by 3.9 degrees. The t-test p-value result was 3.9025129038616655e-191. This low p-value indicates there is no statistical significant difference.
+## Precipitation analysis plot
+![Precipitation in inches over time](https://user-images.githubusercontent.com/64673015/101853369-19f13900-3b25-11eb-90b5-042e494672ef.png)
+
 
 
 
