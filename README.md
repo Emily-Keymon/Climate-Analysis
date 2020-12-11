@@ -60,8 +60,9 @@ The goal of this project was to use Python and SQLAlchemy to do basic climate an
 ![Precipitation info](https://user-images.githubusercontent.com/64673015/101854098-7012ac00-3b26-11eb-9e37-95a95c259b9b.PNG)
 ![Precipitation in inches over time](https://user-images.githubusercontent.com/64673015/101853369-19f13900-3b25-11eb-90b5-042e494672ef.png)
 ### Station analysis
+* Total number of stations:
+![Stations](https://user-images.githubusercontent.com/64673015/101854656-908f3600-3b27-11eb-8a78-2622333bb6f9.PNG)
 * The most active station is USC00519281.
-* Total number of stations:  ![Stations](https://user-images.githubusercontent.com/64673015/101854656-908f3600-3b27-11eb-8a78-2622333bb6f9.PNG)
 ### Temperature analysis
 * Temperature of most active station over the last twelve months of data:
 ![Frequency of temperature observations](https://user-images.githubusercontent.com/64673015/101853504-4d33c800-3b25-11eb-8485-ea5d04b40463.png)
