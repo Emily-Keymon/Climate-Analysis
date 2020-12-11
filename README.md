@@ -1,27 +1,28 @@
 # Climate Analysis
 The goal of this project was to use Python and SQLAlchemy to do basic climate analysis and data exploration of a dataset. The data was contained in a SQLite database.  All of analysis was completed using SQLAlchemy ORM queries, Pandas, and Matplotlib.
 ## Tools Used
-* Python - Pandas, Numpy, Matplotlib, SQLAlchemy, Flask
+* Python - Pandas, Numpy, Matplotlib, SQLAlchemy, Datetime, Flask
 ## Tasks
-### Climate analysis
+### Reflect sqlite tables into SQLAlchemy
 1.  Connected to sqlite database using SQLAlchemy create_engine.
 2.  Used SQLAlchemy automap_base() to reflect tables into classes and saved a reference to those classes called Station and Measurement.
 ### Precipitation analysis
-1.  Designed a query to retrieve the last 12 months of precipitation data.
-2.  Queried the date and prcp values.
-3.  Loaded the query results into a Pandas DataFrame and set the index to the date column.  
-4.  Sorted dataframe values by date.
-5.  Plotted results using the .plot method.
-6.  Use Pandas to print the summary statistics for the precipitation data.
-### Station Analysis
-1.  Designed a query to calculate the total number of stations.
-2.  Designed a query to find the most active stations.
+1.  Designed a query to retrieve last 12 months of precipitation data.
+2.  Calculated date one year from last date in data set.
+3.  Designed a query to retrieve data and precipitation results
+4.  Loaded the query results into a Pandas DataFrame and set the index to the date column.  
+5.  Sorted dataframe values by date.
+6.  Plotted results using the .plot method.
+7.  Use Pandas to print the summary statistics for the precipitation data.
+### Station analysis
+1.  Designed a query to calculate total number of stations.
+2.  Designed a query to find most active stations.
 3.  Listed stations and observation counts in descending order.
 3.  Determined which station had the highest number of observations.
-### Temperature Analysis
+### Temperature analysis
 1.  Designed a query to retrieve the last 12 months of temperature observation data (TOBS).
-2.  Filtered by the station with the highest number of observations.
-3.  Plotted the results as a histogram with `bins=12`.
+2.  Filtered by the station with the highest number of observations, then loaded data into datafram
+3.  Plotted results as a histogram with `bins=12`.
 ### Climate app with multiple routes
 1.  Designed a Flask API based on the queries developed.
 2.  Used Flask to create routes.
@@ -42,11 +43,6 @@ The goal of this project was to use Python and SQLAlchemy to do basic climate an
   * When given the start only, calculated `TMIN`, `TAVG`, and `TMAX` for all dates greater than and equal to the start date.
   * When given the start and the end date, calculate the `TMIN`, `TAVG`, and `TMAX` for dates between the start and end date inclusive.
 
-
-
-## Bonus: Other Recommended Analyses
-
-* The following are optional challenge queries. These are highly recommended to attempt, but not required for the homework.
 
 ### Temperature Analysis I
 
