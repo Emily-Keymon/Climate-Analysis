@@ -56,12 +56,14 @@ The goal of this project was to use Python and SQLAlchemy to do basic climate an
   * When given the start and the end date, calculate the `TMIN`, `TAVG`, and `TMAX` for dates between the start and end date inclusive.
 ## Results
 * In June and December, the mean temperatures only differed by 3.9 degrees. The t-test p-value result was 3.9025129038616655e-191. This low p-value indicates there is no statistical significant difference.
-## Precipitation in inches over time
+### Precipitation in inches over time
 ![Precipitation in inches over time](https://user-images.githubusercontent.com/64673015/101853369-19f13900-3b25-11eb-90b5-042e494672ef.png)
-## Frequency of temperature observations
+### Frequency of temperature observations
 ![Frequency of temperature observations](https://user-images.githubusercontent.com/64673015/101853504-4d33c800-3b25-11eb-8485-ea5d04b40463.png)
-## Trip average temperature
+### Trip average temperature
 ![Trip avg temp](https://user-images.githubusercontent.com/64673015/101853582-72283b00-3b25-11eb-843f-d5da6c57621e.png)
+### Daily normals area plot
+![Daily normals area plot](https://user-images.githubusercontent.com/64673015/101853736-b9163080-3b25-11eb-88d1-41e5703ded2d.png
 
 
 
