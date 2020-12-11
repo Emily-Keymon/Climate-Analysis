@@ -66,13 +66,13 @@ The goal of this project was to use Python and SQLAlchemy to do basic climate an
 ### Temperature analysis
 #### Temperature of most active station over the last twelve months of data:
 ![Frequency of temperature observations](https://user-images.githubusercontent.com/64673015/101853504-4d33c800-3b25-11eb-8485-ea5d04b40463.png)
-### Is there a meaningful difference between the temperature in June and December?  A paired t-test was chosen for this query.
+### Additional temperature analysis
 #### In June and December, the mean temperatures only differed by 3.9 degrees. The t-test p-value result was 3.9025129038616655e-191. This low p-value indicates there is no statistical significant difference.
 ![ttest](https://user-images.githubusercontent.com/64673015/101855678-7191a380-3b29-11eb-8ee7-8bc0ad45758c.PNG)
-### Trip average temperature
-![Trip avg temp](https://user-images.githubusercontent.com/64673015/101853582-72283b00-3b25-11eb-843f-d5da6c57621e.png)
+
 ### Daily normals area plot
 ![Daily normals area plot](https://user-images.githubusercontent.com/64673015/101853813-e2cf5780-3b25-11eb-8910-78026e229ccf.png)
+
 
 
 
