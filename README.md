@@ -43,20 +43,20 @@ The goal of this project was to use Python and SQLAlchemy to do basic climate an
 2.  Used Flask to create routes.
 ### Routes
 1.  `/` 
-   Home page
-   List of all routes available.
+      * Home page
+      * List of all routes available.
 2.  `/api/v1.0/precipitation`
-  * Converted query results to a dictionary using `date` as the key and `prcp` as the value.
-  * Returned JSON representation of your dictionary.
+      * Converted query results to a dictionary using `date` as the key and `prcp` as the value.
+      * Returned JSON representation of your dictionary.
 3.  `/api/v1.0/stations`
-  * Returned JSON list of stations from the dataset.
+      * Returned JSON list of stations from the dataset.
 4.  `/api/v1.0/tobs`
-  * Queried dates and temperature observations of the most active station for the last year of data.  
-  * Returned a JSON list of temperature observations (TOBS) for the previous year.
+      * Queried dates and temperature observations of the most active station for the last year of data.  
+      * Returned a JSON list of temperature observations (TOBS) for the previous year.
 5.  `/api/v1.0/<start>` and `/api/v1.0/<start>/<end>`
-  * Returned a JSON list of the minimum temperature, the average temperature, and the max temperature for a given start or start-end range.
-  * When given the start only, calculated `TMIN`, `TAVG`, and `TMAX` for all dates greater than and equal to the start date.
-  * When given the start and the end date, calculate the `TMIN`, `TAVG`, and `TMAX` for dates between the start and end date inclusive.
+      * Returned a JSON list of the minimum temperature, the average temperature, and the max temperature for a given start or start-end range.
+      * When given the start only, calculated `TMIN`, `TAVG`, and `TMAX` for all dates greater than and equal to the start date.
+      * When given the start and the end date, calculate the `TMIN`, `TAVG`, and `TMAX` for dates between the start and end date inclusive.
 # Results
 ## Precipitation analysis
 #### Precipitation in inches over the last twelve months of data:
