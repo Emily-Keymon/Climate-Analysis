@@ -59,7 +59,9 @@ The goal of this project was to use Python and SQLAlchemy to do basic climate an
       * When given the start and the end date, calculate the `TMIN`, `TAVG`, and `TMAX` for dates between the start and end date inclusive.
 ---
 # Results
+---
 ## Precipitation analysis
+----
 #### Precipitation in inches over the last twelve months of data:
 ![Precipitation info](https://user-images.githubusercontent.com/64673015/101854098-7012ac00-3b26-11eb-9e37-95a95c259b9b.PNG)
 ![Precipitation in inches over time](https://user-images.githubusercontent.com/64673015/101853369-19f13900-3b25-11eb-90b5-042e494672ef.png)
