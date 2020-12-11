@@ -1,7 +1,7 @@
 # Climate Analysis
 The goal of this project was to use Python and SQLAlchemy to do basic climate analysis and data exploration of a dataset. The data was contained in a SQLite database.  All of analysis was completed using SQLAlchemy ORM queries, Pandas, and Matplotlib.
 ## Tools Used
-* Python - Pandas, Numpy, Matplotlib, SQLAlchemy
+* Python - Pandas, Numpy, Matplotlib, SQLAlchemy, Flask
 ## Tasks
 ### Climate analysis
 1.  Connected to sqlite database using SQLAlchemy create_engine.
@@ -22,7 +22,7 @@ The goal of this project was to use Python and SQLAlchemy to do basic climate an
 1.  Designed a query to retrieve the last 12 months of temperature observation data (TOBS).
 2.  Filtered by the station with the highest number of observations.
 3.  Plotted the results as a histogram with `bins=12`.
-### Climate App
+### Climate app with multiple routes
 1.  Designed a Flask API based on the queries developed.
 2.  Used Flask to create routes.
 ### Routes
