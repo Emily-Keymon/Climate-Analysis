@@ -57,7 +57,7 @@ The goal of this project was to use Python and SQLAlchemy to do basic climate an
   * Returned a JSON list of the minimum temperature, the average temperature, and the max temperature for a given start or start-end range.
   * When given the start only, calculated `TMIN`, `TAVG`, and `TMAX` for all dates greater than and equal to the start date.
   * When given the start and the end date, calculate the `TMIN`, `TAVG`, and `TMAX` for dates between the start and end date inclusive.
-## Results
+# Results
 ### Precipitation analysis
 #### Precipitation in inches over the last twelve months of data:
 ![Precipitation info](https://user-images.githubusercontent.com/64673015/101854098-7012ac00-3b26-11eb-9e37-95a95c259b9b.PNG)
@@ -75,9 +75,9 @@ The goal of this project was to use Python and SQLAlchemy to do basic climate an
 ### Daily average rainfall analysis
 ![Daily normals area plot](https://user-images.githubusercontent.com/64673015/101853813-e2cf5780-3b25-11eb-8910-78026e229ccf.png)
 ### Trip analysis
-#### Daily normals
+#### Daily normals:
 ![Normals](https://user-images.githubusercontent.com/64673015/101856516-1660b080-3b2b-11eb-9b1a-69ed227b7ec5.PNG)
-#### Average temperature
+#### Average temperature:
 ![Trip avg temp](https://user-images.githubusercontent.com/64673015/101855986-101e0480-3b2a-11eb-8df9-32aaa05eef88.png)
 
 
