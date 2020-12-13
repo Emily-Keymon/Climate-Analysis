@@ -2,6 +2,13 @@
 The goal of this project was to use Python and SQLAlchemy to do basic climate analysis and data exploration of a dataset. The data was contained in a SQLite database.  All of analysis was completed using SQLAlchemy ORM queries, Pandas, and Matplotlib.
 
 ---
+## Data source
+* https://github.com/Emily-Keymon/Climate-Analysis/blob/master/hawaii_measurements.csv
+* https://github.com/Emily-Keymon/Climate-Analysis/blob/master/hawaii_stations.csv
+* https://github.com/Emily-Keymon/Climate-Analysis/blob/master/hawaii.sqlite
+
+
+---
 ## Tools Used
 * Jupyter Notebook
 * Python - Pandas, Numpy, Matplotlib, SQLAlchemy, Datetime, Flask, Scipy
