@@ -12,7 +12,7 @@ The goal of this project was to use Python and SQLAlchemy to do basic climate an
 ## Tools Used
 * PyCharm - Python IDE
 * Jupyter Notebook
-* Python - Pandas, Numpy, Matplotlib, SQLAlchemy, Datetime, Flask, Scipy
+* Python - Pandas, NumPy, Matplotlib, SQLAlchemy, Datetime, Flask, Scipy
 
 ---
 ## Tasks
